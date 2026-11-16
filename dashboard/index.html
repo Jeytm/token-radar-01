@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="radar.css">
+</head>
+<body>
+<a class="skip" href="#board">Skip to the board</a>
+<div class="shell">
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <span class="brand-name">Token Radar</span>
+        <span class="brand-sub">Pre-token protocols, ranked by what a launch would be worth</span>
+      </div>
+    </div>
+    <div class="top-meta" id="top-meta"></div>
+  </header>
+
+  <section class="lede" aria-label="About this board">
+    <div>
+      <h1>Which pre-token protocol is worth farming next?</h1>
+      <p id="lede-text"></p>
+      <div class="calibration" id="calibration-strip" role="status"></div>
+    </div>
+    <dl class="facts" id="facts"></dl>
+  </section>
+
+  <div class="checks" id="checks" role="status" aria-label="Self-checks"></div>
+
+  <div class="controls" role="search">
+    <div class="field">
+      <label for="q">Search</label>
+      <input type="search" id="q" placeholder="Name, category or chain" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="category">Category</label>
+      <select id="category"></select>
+    </div>
+    <div class="field">
+      <label for="chain">Chain</label>
+      <select id="chain"></select>
+    </div>
+    <div class="field">
+      <span class="label" id="tab-label">Token status</span>
+      <div class="tabs" role="group" aria-labelledby="tab-label">
+        <button type="button" id="tab-pre" aria-pressed="true">Pre-token</button>
+        <button type="button" id="tab-live" aria-pressed="false">Live token</button>
+      </div>
+    </div>
+    <span class="count" id="count"></span>
+  </div>
+
+  <main id="board" tabindex="-1" aria-busy="true"></main>
+
+  <section class="panel model" id="model" aria-label="How implied value is computed"></section>
+
+  <footer class="foot">
+    <p>Implied value is this entry's own estimate from the snapshot's figures — TVL, seven-day growth, time running with no token, and the category's live-token comparables. It is not a price, not a prediction that a token will be issued, and not a promise of any reward. A protocol is described as recording no token, never as having none: the snapshot is DefiLlama's record, not proof. Farming any protocol risks the capital deployed and the gas spent.</p>
+  </footer>
+</div>
+
+<dialog class="detail" id="detail" aria-labelledby="detail-title"></dialog>
+
+<script src="../data.js"></script>
+<script src="radar.js"></script>
+</body>
+</html>
